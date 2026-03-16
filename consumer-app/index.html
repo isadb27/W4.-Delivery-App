@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<title>Rappi Consumer</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header class="header">
+
+<div class="logo">
+Rappi Clone 🛵
+<span id="cart-count">0</span>
+</div>
+
+<div class="search">
+<input type="text" placeholder="Buscar productos o tiendas">
+</div>
+
+</header>
+
+<div class="layout">
+
+<main class="main">
+
+<section>
+<h2>Tiendas</h2>
+<div id="stores" class="store-grid"></div>
+</section>
+
+<section>
+<h2>Productos</h2>
+<div id="products" class="product-grid"></div>
+</section>
+
+</main>
+
+<aside class="cart-panel">
+
+<h2>🛒 Carrito</h2>
+
+<ul id="cart"></ul>
+
+<p id="total">Total: $0</p>
+
+<button class="order-btn" onclick="createOrder()">Crear Orden</button>
+
+</aside>
+
+</div>
+
+<script defer src="app.js"></script>
+
+</body>
+</html>
