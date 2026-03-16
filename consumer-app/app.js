@@ -15,7 +15,7 @@ async function loadStores(){
 
 try{
 
-const response = await fetch("http://localhost:3000/api/stores")
+const response = await fetch("https://w4-delivery-app.vercel.app/api/stores")
 
 if(!response.ok) throw new Error("Stores endpoint not ready")
 
@@ -54,7 +54,7 @@ async function loadProducts(){
 
 try{
 
-const response = await fetch("http://localhost:3000/api/products")
+const response = await fetch("https://w4-delivery-app.vercel.app/api/products")
 
 if(!response.ok) throw new Error("Products endpoint not ready")
 
@@ -234,7 +234,7 @@ total: cart.reduce((sum,item)=> sum + item.price,0)
 
 try{
 
-const response = await fetch("http://localhost:3000/api/orders",{
+const response = await fetch("https://w4-delivery-app.vercel.app/api/orders",{
 method:"POST",
 headers:{
 "Content-Type":"application/json"

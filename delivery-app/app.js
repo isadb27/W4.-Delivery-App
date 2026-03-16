@@ -2,7 +2,9 @@ const orderList = document.getElementById("orders")
 
 async function loadOrders(){
 
-const response = await fetch("http://localhost:3000/api/orders")
+try{
+
+const response = await fetch("https://w4-delivery-app.vercel.app/api/orders")
 
 const orders = await response.json()
 
@@ -29,6 +31,14 @@ li.innerHTML = `
 orderList.appendChild(li)
 
 })
+
+}catch(error){
+
+console.error("Error cargando órdenes:", error)
+
+orderList.innerHTML = "<p>No se pudieron cargar las órdenes.</p>"
+
+}
 
 }
 
