@@ -1,7 +1,13 @@
 import { Router } from "express";
-import { createOrderController, getOrdersController } from "./order.controller";
+import { createOrderController, getOrdersController, acceptOrderController, updatePositionController } from "./order.controller";
 
-export const router = Router();
+const router = Router();
 
 router.post("/", createOrderController);
 router.get("/", getOrdersController);
+
+// segundo lab
+router.patch("/:id/accept", acceptOrderController);
+router.patch("/:id/position", updatePositionController);
+
+export { router };
