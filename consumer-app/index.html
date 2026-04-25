@@ -5,6 +5,14 @@
 <meta charset="UTF-8">
 <title>Rappi Consumer</title>
 <link rel="stylesheet" href="styles.css">
+
+<!-- Leaflet (mapas) -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<!-- Supabase Realtime -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
 </head>
 
 <body>
@@ -12,7 +20,7 @@
 <header class="header">
 
 <div class="logo">
-Rappi Clone 🛵
+Rappi 🛵
 <span id="cart-count">0</span>
 </div>
 
@@ -26,18 +34,39 @@ Rappi Clone 🛵
 
 <main class="main">
 
+<!-- Tiendas -->
 <section>
 <h2>Tiendas</h2>
 <div id="stores" class="store-grid"></div>
 </section>
 
+<!-- Productos -->
 <section>
 <h2>Productos</h2>
 <div id="products" class="product-grid"></div>
 </section>
 
+<!-- MAPA (solo al crear orden) -->
+<section id="map-container" style="display:none;">
+<h2>Selecciona tu ubicación</h2>
+
+<div id="map" style="height: 300px; border-radius: 10px;"></div>
+
+<p id="coords"></p>
+
+<button onclick="confirmOrder()">Confirmar ubicación</button>
+</section>
+
+<!-- MIS PEDIDOS -->
+<section>
+<h2>Mis pedidos</h2>
+<button onclick="loadMyOrders()">Ver pedidos</button>
+<div id="orders"></div>
+</section>
+
 </main>
 
+<!-- Carrito -->
 <aside class="cart-panel">
 
 <h2>🛒 Carrito</h2>
@@ -46,12 +75,13 @@ Rappi Clone 🛵
 
 <p id="total">Total: $0</p>
 
-<button class="order-btn" onclick="createOrder()">Crear Orden</button>
+<button class="order-btn" onclick="openMap()">Crear Orden</button>
 
 </aside>
 
 </div>
 
+<!-- JS principal -->
 <script defer src="app.js"></script>
 
 </body>
